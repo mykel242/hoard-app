@@ -1,0 +1,15 @@
+{
+  "name": "hoard-app",
+  "version": "1.0.0",
+  "description": "Keep track of payment transactions and account balances",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"electron ."
+  },
+  "author": "Mykel",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^31.1.0"
+  }
+}
