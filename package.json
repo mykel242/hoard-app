@@ -5,11 +5,12 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"electron ."
+    "start": "electron ."
   },
   "author": "Mykel",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^31.1.0"
+    "electron": "^31.1.0",
+    "pouchdb-node": "^9.0.0"
   }
 }
