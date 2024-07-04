@@ -1,39 +1,38 @@
 class Transaction {
 
-	#amount = 0;
+	static docType = "Transaction";
 
+
+// "Solar Loan", TransactionType.PAYMENT, -160, null, null
 constructor(
+	id,
 	description, 
-	type, 
+	transactionType, 
 	amount,  
 	dueBy,
 	period) {
 
+	this.id = id;
+	this.type = this.constructor.docType;
 	this.description = description;
-	this.type = type;
-	this.#amount = amount;
+	this.transactionType = transactionType;
+	this.amount = amount;
 	this.estimateAmount = amount;
-	this.estimate = true;
-	this.paid = false;
-	this.recurs = false;
-	this.clear = false;
-	this.dueBy = null;
-	this.executedDate = null;
-	this.clearDate = null;
-	this.period = period;
-	this.paymentAccount = null;
+	// this.estimate = true;
+	// this.paid = false;
+	// this.recurs = false;
+	// this.clear = false;
+	// this.dueBy = null;
+	// this.executedDate = null;
+	// this.clearDate = null;
+	// this.period = period;
+	// this.paymentAccount = null;
 }
 
-	get amount() {
-		return this.#amount;
-	}
 
-	set amount(a) {
-		this.#amount = a;
-	}
 
 	print() {
-		console.log(`${ this.description } \t\t ${ this.type.name } \t ${ this.amount }`);
+		console.log(`${ this.description } \t\t ${ this.transactionType.name } \t ${ this.amount }`);
 	}
 }
 

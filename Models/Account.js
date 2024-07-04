@@ -1,7 +1,11 @@
 class Account {
-
-   constructor(name, type, balance) {
-      this.name = name;
+   
+   static docType = "Account";
+   
+   constructor(id, description, type, balance) {
+      this._id = id;
+      this.type = this.constructor.docType;
+      this.description = description;
       this.accountType = type;
       this.balance = balance;
    }
