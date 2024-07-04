@@ -35,9 +35,10 @@ app.whenReady().then(() => {
 	t1.print();
 	console.log(t1);
 
-	let t2 = new Transaction("Payday!", TransactionType.DEPOSIT , 1700, null, null);
+	let t2 = new Transaction(uuidv4(), "Payday!", TransactionType.DEPOSIT , 1700, null, null);
 	t2.paymentAccount = a1;
 	t2.print();
+	console.log(t2);
 
 	datastore.info();
 
