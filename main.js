@@ -24,22 +24,25 @@ Menu.setApplicationMenu(null);
 
 app.whenReady().then(() => {
 	createWindow();
-	let a1 = new Account(uuidv4(), 'Bill Pay', AccountType.CHECKING, 1000.00);
-	a1.print();
-	console.log(a1);
+	// datastore.info();
+
+	// let a1 = new Account(uuidv4(), 'Bill Pay', AccountType.CHECKING, 1000.00);
 	// datastore.addDocument(a1);
-	// datastore.getDocument();
 	
-	let t1 = new Transaction(uuidv4(), "Solar Loan", TransactionType.PAYMENT, -160, null, null);
-	t1.paymentAccount = a1;
-	t1.print();
-	console.log(t1);
+	// let t1 = new Transaction(uuidv4(), "Solar Loan", TransactionType.PAYMENT, -160, null, null);
+	// datastore.addDocument(t1);
+	// t1.paymentAccount = a1.id;
+	// t1.print();
+	// console.log(t1);
 
-	let t2 = new Transaction(uuidv4(), "Payday!", TransactionType.DEPOSIT , 1700, null, null);
-	t2.paymentAccount = a1;
-	t2.print();
-	console.log(t2);
+	// let t2 = new Transaction(uuidv4(), "Payday!", TransactionType.DEPOSIT , 1700, null, null);
+	// datastore.addDocument(t2);
+	// t2.paymentAccount = a1.id;
+	// t2.print();
+	// console.log(t2);
 
-	datastore.info();
+	datastore.findDocuments(Account.docType);
+	datastore.findDocuments(Transaction.docType);
+	
 
 })

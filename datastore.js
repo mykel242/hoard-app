@@ -1,11 +1,26 @@
 // Datastore.js
 const PouchDB = require('pouchdb-node');
+PouchDB.plugin(require('pouchdb-find'));
 
-// Singleton?
+// Object-Literal / Singleton?
 const datastore = {
 
 	db:  new PouchDB('mydb'),
 	tid: Math.floor(Math.random() * 99999),
+
+	setupIndecies() {
+		console.log('indexing datastore');
+		this.db.createIndex({
+    		index: {
+      			fields: ['type'],
+     		 	name: 'accountType-index'
+    		}
+		}).then(index => {
+			console.log(index);
+		}).catch(err => {
+			console.error(err);
+		});
+	},
 
 	info() {
 		console.log(`datastore instance [${ this.tid }]`);
@@ -24,11 +39,30 @@ const datastore = {
 		});
 	},
 
-	getDocument(docType) {
-		this.db.get(docType).then(function (doc) {
-			console.log(doc);
+	getDocument(docId) {
+		this.db.get(docType)
+		.then(doc => {
+			// handle doc
+			console.log(doc)
+		})
+		.catch(err => {
+			console.error(err)
+		})
+	},
+
+	findDocuments(docType) {
+		/* db.find(...) requires Mango Queries plugin 			*/
+		/* see: https://pouchdb.com/guides/mango-queries.html 	*/
+
+		this.db.find({
+			selector: {type: docType},
+		}).then(function (result) {
+			console.log(result);
+		}).catch(function (err) {
+  			console.error(err);
 		});
 	}
 };
 
+datastore.setupIndecies();
 module.exports = { datastore }
