@@ -15,6 +15,7 @@
     "uuid": "^10.0.0"
   },
   "dependencies": {
-    "pouchdb-find": "^9.0.0"
+    "pouchdb-find": "^9.0.0",
+    "simpledotcss": "^2.3.1"
   }
 }

@@ -16,11 +16,11 @@ const createWindow = () => {
 	});
 
 	win.loadFile('index.html');
-	// win.webContents.openDevTools({ mode: 'detach' });
+	// win.webContents.openDevTools(); // { mode: 'detach' }
 }
 
-// Disable the default native menus
-Menu.setApplicationMenu(null);
+// -- Disable the default native menus -- 
+// Menu.setApplicationMenu(null);
 
 app.whenReady().then(() => {
 	createWindow();
