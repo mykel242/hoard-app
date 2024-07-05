@@ -11,7 +11,7 @@
       http-equiv="X-Content-Security-Policy"
       content="default-src 'self'; script-src 'self'"
     />
-    <title>For The Horde.</title>
+    <title>For The Hoard!</title>
     <link rel="stylesheet" href="../node_modules/simpledotcss/simple.min.css">
   </head>
   <body>
@@ -22,17 +22,24 @@
 
     <main>
 
-    <p>Lorem Ipsum.</p>
-
+    <div id="accounts-wrapper">
+      <ul id="accounts">
+        <li>Nothing Loaded Yet.</li>
+      </ul>
+    </div>
+    
+    <h3>Versions</h3>
     <ul id="info"></ul>
+
+    <input id="ipcTestField" placeholder="🎱"></input>
+    <button id="ipcTestButton">Push Me.</button>
+    <p id="ipcTestResult"></p>
+
     </main>
 
     <footer>Hoard App &copy;2024 <a href="https://dotpitch.xyz" target="_blank">Dot Pitch LLC.</a>
     </footer>
-          
-          
-
 
   </body>
-  <script src="./renderer.js"></script>
+  <script src="./index.js"></script> 
 </html>

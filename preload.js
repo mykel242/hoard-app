@@ -1,3 +1,4 @@
+console.log('>> preload.js');
 const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('versions', {
@@ -7,4 +8,13 @@ contextBridge.exposeInMainWorld('versions', {
   //ping: () => ipcRenderer.invoke('ping')
 });
 
-console.log('>> preload.js');
+contextBridge.exposeInMainWorld('myBridge', {
+
+  sendIPCTest: (inputText) => {
+    ipcRenderer.send("on-ipc-test", inputText);
+  },
+
+  logToRenderer: (inputText) => {
+    return ipcRenderer.invoke("log-to-renderer", inputText);
+  }
+});

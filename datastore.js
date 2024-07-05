@@ -16,7 +16,7 @@ const datastore = {
      		 	name: 'accountType-index'
     		}
 		}).then(index => {
-			console.log(index);
+			console.log("index exists");
 		}).catch(err => {
 			console.error(err);
 		});
