@@ -10,11 +10,12 @@
   "author": "Mykel",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^31.1.0",
-    "pouchdb-node": "^9.0.0",
-    "uuid": "^10.0.0"
+
   },
   "dependencies": {
+    "electron": "^31.1.0",
+    "pouchdb-node": "^9.0.0",
+    "uuid": "^10.0.0",
     "pouchdb-find": "^9.0.0",
     "simpledotcss": "^2.3.1"
   }

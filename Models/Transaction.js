@@ -32,10 +32,10 @@ class Transaction {
 }
 
 const TransactionType = Object.freeze({
-    PAYMENT         : { name: "payment"},
-    DEPOSIT			: { name: "deposit"},
-    TRANSFER		: { name: "transfer"},
-    ADJUSTMENT		: { name: "adjustment"}
+    PAYMENT		: { name: "payment"},
+    DEPOSIT		: { name: "deposit"},
+    TRANSFER	: { name: "transfer"},
+    ADJUSTMENT	: { name: "adjustment"}
 });
 
 module.exports = { Transaction, TransactionType };
