@@ -5,8 +5,9 @@ contextBridge.exposeInMainWorld('versions', {
   node: () => process.versions.node,
   chrome: () => process.versions.chrome,
   electron: () => process.versions.electron,
-  //ping: () => ipcRenderer.invoke('ping')
 });
+
+// REF: https://www.electronjs.org/docs/latest/tutorial/ipc
 
 contextBridge.exposeInMainWorld('myBridge', {
 

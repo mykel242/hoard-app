@@ -19,22 +19,15 @@ ipcTestButton.addEventListener("click", () => {
 });
 */
 
-/* UI -> electron main process -> UI */
-ipcTestButton.addEventListener("click", async () => {
 
-	const inputText = ipcTestField.value.trim();
-	if (inputText !== "") {
-		const result = await myBridge.logToRenderer(inputText);
-		ipcTestResult.innerHTML += result;
-		ipcTestField.value = "";
-	}
-});
+async function processTextField() {
+  const inputText = ipcTestField.value.trim();
+  if (inputText !== "") {
+    const result = await myBridge.logToRenderer(inputText);
+    ipcTestResult.innerHTML += result;
+    ipcTestField.value = "";
+  }
+}
 
-ipcTestField.addEventListener("change", async () => {
-	const inputText = ipcTestField.value.trim();
-	if (inputText !== "") {
-		const result = await myBridge.logToRenderer(inputText);
-		ipcTestResult.innerHTML += result;
-		ipcTestField.value = "";
-	}
-});
+ipcTestButton.addEventListener("click", processTextField);
+ipcTestField.addEventListener("change", processTextField);
