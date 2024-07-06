@@ -30,8 +30,9 @@ function main() {
 		return `&gt;&gt; ${ textFromField }<br/>`;
 	});
 
-	hoardDataManager.getInfo();
-	// hoardDataManager.getAccounts();
+	hoardDataManager.info();
+	const aaa = hoardDataManager.getAccounts();
+	console.log(aaa);
 	// hoardDataManager.getTransactions();
 }
 
